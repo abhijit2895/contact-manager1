@@ -18,7 +18,7 @@ const Input = ({
         id={id}
         name={name}
         placeholder={placeholder}
-        // onChange={onChange}
+        onChange={onChange}
         // onClick={onClick}
         {...props}
       />

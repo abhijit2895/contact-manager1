@@ -2,11 +2,17 @@
 import { Link } from "react-router-dom";
 
 const Card = ({contact}) => {
+  console.log("card prop",contact);
+  // console.log(contact);
+  
+  
   return (
     <>
       <section className="container my-3">
         <div className="row">
-          <div className="col-md-6 border p-3 rounded">
+         {
+            contact.map(user=>
+               <div className="col-md-6 border p-3 rounded">
             <div className="row d-flex justify-content-around align-items-center">
               <div className="col-md-3">
                 <img
@@ -17,23 +23,25 @@ const Card = ({contact}) => {
               <div className="col-md-7">
                 <ul className="list-group">
                   <li className="list-group-item list-group-item-active">
-                    Name:Abhijit
+                    Name:{user.name}
                   </li>
                   <li className="list-group-item list-group-item-active">
-                    Email:abhijit01gmail.com
+                    Email:{user.email}
                   </li>
                   <li className="list-group-item list-group-item-active">
-                    Contact:8989898989
+                    Contact:
                   </li>
                 </ul>
               </div>
               <div className="col-md-2 d-flex flex-column ">
-                 <Link className="btn btn-warning my-1" to="/view"><i className="fa fa-eye"></i></Link>
-                 <Link className="btn btn-primary my-1" to="/edit"><i className="fa fa-pen"></i></Link>
+                 <Link className="btn btn-warning my-1" to={`/view/${user.id}`}><i className="fa fa-eye"></i></Link>
+                 <Link className="btn btn-primary my-1" to={`/edit/${user.id}`}><i className="fa fa-pen"></i></Link>
                  <button className="btn btn-danger"><i className="fa fa-trash"></i></button>
               </div>
             </div>
           </div>
+            )
+         }
         </div>
       </section>
     </>
