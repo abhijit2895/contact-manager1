@@ -14,4 +14,14 @@ export class ContactServices{
         const dataUrl=`${this.SERVER_URL}/contacts`
         return axios.post(dataUrl,contact)
     }
+    static updateContact(contact,contactId){
+        const dataUrl=`${this.SERVER_URL}/contacts/${contactId}`
+        return axios.put(dataUrl,contact)
+    }
+    static deleteContact(contactId){
+        
+        const dataUrl=`${this.SERVER_URL}/contacts/${contactId}`
+        return axios.delete(dataUrl)
+
+    }
 }

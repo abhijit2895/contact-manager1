@@ -3,6 +3,7 @@ import Card from "../../common/ui/Card"
 import { ContactServices } from "../../contactServices/contactServices"
 import { useEffect, useState } from "react"
 import Loading from "../../common/Loading"
+import { ROUTING_TEXT } from "../../constant/textConstant"
 
 
 const ContactList = () => {
@@ -32,7 +33,7 @@ const ContactList = () => {
     <>
     <section className="container p-3">
          <p className="h4">Contact List 
-            <span className="ms-3"><Link className="btn btn-primary" to='/add'><i className="fa fa-plus-circle"></i>Add</Link></span>
+            <span className="ms-3"><Link className="btn btn-primary" to={ROUTING_TEXT.ADD}><i className="fa fa-plus-circle"></i>Add</Link></span>
          </p>
          <p className="fst-italic">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti nihil, sint libero cum soluta odit cupiditate repudiandae harum ipsum esse deserunt ea reiciendis facere tempore non doloremque voluptate laboriosam fugiat.</p>
          <div className="row">
